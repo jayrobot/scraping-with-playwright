@@ -39,7 +39,7 @@ connection.connect();
 
 	const frslinks = await page2.$$eval("a", (all_anchors) => {
 		const data = [];
-		const pageLocation = "/Staff/FRS Forums.htm";
+		const pageLocation = "/Staff/FRSForums.htm";
 		all_anchors.forEach((anchor) => {
 			const href = anchor.href;
 			const description = anchor.innerText;
