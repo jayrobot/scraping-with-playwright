@@ -16,7 +16,7 @@ const getLinks = async (url) => {
 		const pageLocation =
 			"/Staff/" + url.replace(/^.*[\\\/]/, "").replace("NoPW", "");
 
-		const links = $("#text-area a");
+		const links = $("#text-area a").not(".button");
 		// console.log(links);
 
 		links.each((i, link) => {
@@ -31,61 +31,61 @@ const getLinks = async (url) => {
 };
 
 const linksToScrape = [
-	{
-		Category: "Healthy Families Missives",
-		SubCategory: "2021 Missives",
-		Link: "HealthyFamiliesMissivesNoPW.htm",
-		Description:
-			"Below are links to HFNY missives, listed with the most recent date first. Feel free to print and distribute these missives to HFNY staff.",
-		Type: "Page",
-	},
-	{
-		Category: "OCFS, PCANY and CHSR Resources, Forms and Guidelines",
-		SubCategory: "OCFS",
-		Link: "COVID-19NoPW.htm",
-		Description: "COVID-19/Other Emergency Resources",
-		Type: "Page",
-	},
-	{
-		Category: "Training",
-		SubCategory: "Training",
-		Link: "trainingNoPW.htm",
-		Description: "Training",
-		Type: "Page",
-	},
-	{
-		Category: "Outreach/Capacity Building",
-		SubCategory: "Outreach/Capacity Building",
-		Link: "outreachNoPW.htm",
-		Description: "Outreach/Capacity Building",
-		Type: "Page",
-	},
-	{
-		Category: "Outreach",
-		SubCategory: "Outreach",
-		Link: "outreachpageNoPW.htm",
-		Description: "Outreach",
-		Type: "Page",
-	},
-	{
-		Category: "Capacity Building",
-		SubCategory: "Capacity Building",
-		Link: "capacitybuildingpageNoPW.htm",
-		Description: "Capacity Building",
-		Type: "Page",
-	},
+	// {
+	// 	Category: "Healthy Families Missives",
+	// 	SubCategory: "2021 Missives",
+	// 	Link: "HealthyFamiliesMissivesNoPW.htm",
+	// 	Description:
+	// 		"Below are links to HFNY missives, listed with the most recent date first. Feel free to print and distribute these missives to HFNY staff.",
+	// 	Type: "Page",
+	// },
+	// {
+	// 	Category: "OCFS, PCANY and CHSR Resources, Forms and Guidelines",
+	// 	SubCategory: "OCFS",
+	// 	Link: "COVID-19NoPW.htm",
+	// 	Description: "COVID-19/Other Emergency Resources",
+	// 	Type: "Page",
+	// },
+	// {
+	// 	Category: "Training",
+	// 	SubCategory: "Training",
+	// 	Link: "trainingNoPW.htm",
+	// 	Description: "Training",
+	// 	Type: "Page",
+	// },
+	// {
+	// 	Category: "Outreach/Capacity Building",
+	// 	SubCategory: "Outreach/Capacity Building",
+	// 	Link: "outreachNoPW.htm",
+	// 	Description: "Outreach/Capacity Building",
+	// 	Type: "Page",
+	// },
+	// {
+	// 	Category: "Outreach",
+	// 	SubCategory: "Outreach",
+	// 	Link: "outreachpageNoPW.htm",
+	// 	Description: "Outreach",
+	// 	Type: "Page",
+	// },
+	// {
+	// 	Category: "Capacity Building",
+	// 	SubCategory: "Capacity Building",
+	// 	Link: "capacitybuildingpageNoPW.htm",
+	// 	Description: "Capacity Building",
+	// 	Type: "Page",
+	// },
+	// {
+	// 	Category: "Hiring",
+	// 	SubCategory: "Hiring",
+	// 	Link: "HiringNoPW.htm",
+	// 	Description: "Hiring",
+	// 	Type: "Page",
+	// },
 	{
 		Category: "HFNY QA/TA & FAQs",
 		SubCategory: "HFNY Quality Assurance, Technical Assistance & FAQs",
 		Link: "supportNoPW.htm",
 		Description: "HFNY Quality Assurance, Technical Assistance & FAQs",
-		Type: "Page",
-	},
-	{
-		Category: "Hiring",
-		SubCategory: "Hiring",
-		Link: "HiringNoPW.htm",
-		Description: "Hiring",
 		Type: "Page",
 	},
 	// {
