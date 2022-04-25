@@ -43,14 +43,14 @@ const linksToScrape = [
 		SubCategory: "CA Policy Manual Appendices",
 		Link: "caupdatedpolicyandappedicesNoPW.htm",
 		Description: "CA Updated Policy",
-		Type: "Document",
+		Type: "Page",
 	},
 	{
 		Category: "Policies & Standards",
 		SubCategory: "HFNY Policy Manual Appendices",
 		Link: "HFNYupdatedpoliciesNoPW.htm",
 		Description: "HFNY Site Specific Policy Manual",
-		Type: "Document",
+		Type: "Page",
 	},
 ];
 
@@ -61,7 +61,7 @@ const sql =
 	"INSERT INTO Links (href, description, pageLocation, category, subCategory) VALUES ?";
 let linkData = [];
 
-for (i = 0; i < linksToScrape.length; i++) {
+for (i = 0, ltsLength = linksToScrape.length; i < ltsLength; i++) {
 	let linkToScrape = linksToScrape[i];
 
 	if (linkToScrape.Type === "Page") {
