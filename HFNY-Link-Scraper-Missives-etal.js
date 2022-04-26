@@ -22,7 +22,8 @@ const getLinks = async (url) => {
 		links.each((i, link) => {
 			let href = $(link).attr("href");
 			let description = $(link).text();
-			data.push({ href, description, pageLocation });
+			let category = $(link).parent().first()[0].innerText || "";
+			data.push({ href, description, pageLocation, category });
 		});
 		return data;
 	} catch (error) {
@@ -81,20 +82,20 @@ const linksToScrape = [
 	// 	Description: "Hiring",
 	// 	Type: "Page",
 	// },
-	{
-		Category: "HFNY QA/TA & FAQs",
-		SubCategory: "HFNY Quality Assurance, Technical Assistance & FAQs",
-		Link: "supportNoPW.htm",
-		Description: "HFNY Quality Assurance, Technical Assistance & FAQs",
-		Type: "Page",
-	},
 	// {
-	// 	Category: "Reporting",
-	// 	SubCategory: "HFNY Reporting",
-	// 	Link: "reportingNoPW.htm",
-	// 	Description: "HFNY Reporting Documents",
+	// 	Category: "HFNY QA/TA & FAQs",
+	// 	SubCategory: "HFNY Quality Assurance, Technical Assistance & FAQs",
+	// 	Link: "supportNoPW.htm",
+	// 	Description: "HFNY Quality Assurance, Technical Assistance & FAQs",
 	// 	Type: "Page",
 	// },
+	{
+		Category: "Reporting",
+		SubCategory: "HFNY Reporting",
+		Link: "reportingNoPW.htm",
+		Description: "HFNY Reporting Documents",
+		Type: "Page",
+	},
 ];
 
 console.log(linksToScrape);
@@ -116,7 +117,7 @@ for (i = 0, ltsLength = linksToScrape.length; i < ltsLength; i++) {
 				link.href,
 				link.description,
 				link.pageLocation,
-				linkToScrape.Category,
+				link.Category || linkToScrape.Category,
 				linkToScrape.SubCategory,
 			]);
 			connection.query(sql, [linkData], (err, result) => {
